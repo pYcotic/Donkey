@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AYCA - And Your Choices Are!</title>
-    <link href="css/output.css" rel="stylesheet">
-  </head>
-  <body>
-  <h1 class="text-4xl font-bold text-blue-600 shadow-md p-6 bg-white rounded-lg">Welcome, And Your choices Are...</h1>
-  </body>
-</html>
+{{template "partials/header"}}
+
+<h1 class="text-4xl font-bold text-blue-600 shadow-md p-6 bg-white rounded-lg">{{.Title}}</h1>
+
+{{template "partials/footer"}}

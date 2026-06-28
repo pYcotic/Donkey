@@ -9,16 +9,18 @@ import (
 )
 
 func main() {
+		engine := html.New("./views", ".html")
+
 		app := fiber.New(fiber.Config{
-				Views: html.New("./views", ".html"),
+				Views: engine,
 		})
 
 		app.Get("/*", static.New("./static"))
 
 		app.Get("/", func(c fiber.Ctx) error {
 				return c.Render("index", fiber.Map{
-						"Title": "Hello, World!",
-				})
+						"Title": "Welcome, And Your choices Are...",
+				}, "layout/main")
 		})
 
     log.Fatal(app.Listen(":3000"))
