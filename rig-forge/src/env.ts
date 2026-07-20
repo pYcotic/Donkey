@@ -5,6 +5,11 @@ export const env = createEnv({
   server: {
     SERVER_URL: z.url().optional(),
     DATABASE_URL: z.url(),
+    DATABASE_MAX_POOL: z.coerce.number().int().positive().default(20),
+    DATABASE_IDLE_TIMEOUT: z.coerce.number().int().positive().default(30000),
+    DATABASE_CONNECTION_TIMEOUT: z.coerce.number().int().positive().default(5000),
+    NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+    PORT: z.coerce.number().int().positive().default(3000),
   },
 
   /**
